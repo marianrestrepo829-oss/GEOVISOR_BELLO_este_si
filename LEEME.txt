@@ -1,0 +1,51 @@
+GEOVISOR DE BELLO
+
+PARA ABRIRLO EN WINDOWS SIN VISUAL STUDIO CODE
+1. Haz doble clic en Iniciar_Geovisor.bat.
+2. Se abrirá el visor en tu navegador predeterminado.
+3. Deja abierta la ventana de PowerShell mientras usas el visor.
+4. Para cerrar el servidor, vuelve a esa ventana y presiona Ctrl+C.
+
+El visor necesita conexión a Internet para cargar los mapas base, las librerías
+externas y la búsqueda de lugares.
+
+PUBLICAR EN GITHUB PAGES
+1. Sube al repositorio index.html, scripts.js, styles.css y la carpeta data.
+2. Conserva los nueve archivos ZIP dentro de data; no hace falta subir la carpeta
+   dta original ni los archivos Shapefile sueltos.
+3. En GitHub, abre Settings > Pages y publica desde la rama principal,
+   seleccionando /(root) como carpeta.
+4. Abre la URL publicada y activa una capa en la sección Capas. Se necesita
+   conexión a Internet para descargar mapas base y librerías externas.
+
+FUNCIONES DISPONIBLES
+- Transparencia por capa, búsqueda de direcciones, mediciones y tabla de atributos.
+- Carga capas Shapefile en formato ZIP desde la sección Capas; el visor las lee en el navegador, incluso cuando está publicado.
+- Informes técnicos PDF con el encuadre, capas usadas, parámetros, resultados,
+  tablas, interpretaciones y modificaciones registradas durante la sesión.
+- Análisis espacial: áreas de influencia, clasificación temática, superposición,
+  proximidad en línea recta, concentración agregada por celdas, gráficos y exposición
+  de entidades a una capa de amenazas.
+- Los resultados de análisis se agregan al mapa como capas nuevas.
+- Street View abre un panorama incrustado cerca del centro del mapa y lo
+  actualiza al seleccionar otra ubicación mientras el panel permanece abierto.
+- Street View usa una URL clásica de Google Maps sin clave API; no es una API
+  oficialmente documentada vigente y Google podría bloquearla o no mostrar
+  panoramas en ciertos puntos.
+- En Buffer puedes elegir una capa objetivo opcional para contar e identificar
+  entidades que intersectan el área de influencia. Sin esa selección, el informe
+  no atribuye elementos afectados.
+- El informe PDF registra las herramientas disponibles en esta versión:
+  Buffer, Clip, Intersect, Union, Dissolve, Erase, Spatial Join,
+  clasificación temática, proximidad, concentración por celdas, gráficos
+  estadísticos y exposición a amenazas.
+
+LIMITACIONES DE LOS DATOS
+- La accesibilidad calcula cercanía en línea recta; no calcula rutas ni tiempos
+  de viaje.
+- El análisis de riesgos usa las capas seleccionadas como amenaza y exposición;
+  la precisión depende de sus atributos, escala y calidad.
+- El registro de operaciones se mantiene en memoria durante la sesión actual.
+  Clip, Union, Dissolve, Erase y Spatial Join requieren geometrías de entrada
+  válidas; Union agrega geometrías y registra los campos de origen, pero no
+  fusiona atributos registro a registro.
